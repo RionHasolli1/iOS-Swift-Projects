@@ -65,7 +65,7 @@ struct MapUI: View {
            
            
             
-                    // Insert an annotation type here
+                    /
                 }
         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
      
@@ -100,7 +100,7 @@ var body: some View {
     Button(action: {
         presentationMode.wrappedValue.dismiss()
     } ) {
-        Text("Dismiss")
+        Text("Nuk po Bon")
     }
   }
 
