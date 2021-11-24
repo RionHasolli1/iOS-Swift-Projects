@@ -11,7 +11,7 @@ struct toogle1:View{
             List{
          
                 
-                Toggle("hihi",isOn:$dhezu)
+                Toggle("Switch to Load",isOn:$dhezu)
                     .toggleStyle(SwitchToggleStyle(tint: .green))
                ActivityIndicator()
                 
@@ -30,6 +30,7 @@ struct toogle1:View{
 }
 
 
+
 struct ActivityIndicator: UIViewRepresentable {
     typealias Context = UIViewRepresentableContext<Self>
     typealias UIViewType = UIActivityIndicatorView
@@ -39,15 +40,15 @@ struct ActivityIndicator: UIViewRepresentable {
     }
 
     public func updateUIView(_ uiView: UIViewType, context: Context) {
-        if !context.environment.isEnabled && uiView.isAnimating {
+        if context.environment.isEnabled && uiView.isAnimating {
             uiView.stopAnimating()
         }
-        if context.environment.isEnabled &&  !uiView.isAnimating {
+        if !context.environment.isEnabled &&  !uiView.isAnimating {
             uiView.startAnimating()
         }
     }
 }
-    
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
